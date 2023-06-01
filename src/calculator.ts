@@ -1,15 +1,26 @@
-export const add = (firstNumber: number, secondNumber: number): number => {
-  return firstNumber + secondNumber;
-};
+interface MathOperation {
+  operation(firstNumber: number, secondNumber: number): number;
+}
 
-export const sub = (firstNumber: number, secondNumber: number): number => {
-  return firstNumber - secondNumber;
-};
+export class Add implements MathOperation {
+  operation(firstNumber: number, secondNumber: number): number {
+    return firstNumber + secondNumber;
+  }
+}
+export class Sub implements MathOperation {
+  operation(firstNumber: number, secondNumber: number): number {
+    return firstNumber - secondNumber;
+  }
+}
 
-export const multi = (firstNumber: number, secondNumber: number): number => {
-  return firstNumber * secondNumber;
-};
+export class Multi implements MathOperation {
+  operation(firstNumber: number, secondNumber: number): number {
+    return firstNumber * secondNumber;
+  }
+}
 
-export const div = (firstNumber: number, secondNumber: number): number => {
-  return firstNumber / secondNumber;
-};
+export class Div implements MathOperation {
+  operation(firstNumber: number, secondNumber: number): number {
+    return firstNumber / secondNumber;
+  }
+}
